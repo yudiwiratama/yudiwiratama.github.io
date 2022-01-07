@@ -29,11 +29,16 @@ body {
 
 
 
-@media (max-width: 1000.98px) { 
-    .about-wrap {
-    padding: 50%;
+@media (min-width: 577px) {
+    .vid {
+        width: 100%;
+    }
 }
 
+@media (max-width: 1000.98px) { 
+    .about-wrap {
+    padding: 80%;
+}
 .about-wrap {
     padding: 0 2em;
 }
