@@ -24,36 +24,59 @@
     <title>Hello, world!</title>
 </head>
 
-
+<body id="page-top">
 
 <script>
+//Dom Background kategori
+function bgBlack(x) {
+x.style.backgroundColor = "black";
+x.style.color = "white";
+}
 
-    // onload
-    function myFunction() {
-      alert("Discount!!! 2022!!");
-    }
+function normalBg(x) {
+x.style.backgroundColor = "white";
+x.style.color = "black";
+}
+//Dom Background kategori
 
-    // onclick
-    function myFunctionColor() {
-  document.getElementById("alert").style.color = "white";
-  document.getElementById("alert").style.background = "black";
+function bigImg(x) {
+x.style.transform = "scale(1.2)";
+x.style.transition = "0.2s";
+}
+
+function normalImg(x) {
+x.style.transform = "scale(1)";
+
+
+
 }
 
 
-//onsearch
-function myFunctionSearch() {
-   var x = document.getElementById("myInput");
-   document.getElementById("input").innerHTML = "You are searching for: " + x.value;
+
+
+//DOM Corner in carousel
+function Corners() {
+document.getElementById("corn").style.borderRadius
+= "50px";
 }
+//DOM Corner in carousel
 
 
-    </script>
-                <!--dom1 onload -->
-<body id="page-top" onload="myFunction()">
+</script>
+
+
+
+
+
+
+
+
+
+
     <!--NavBar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand"  href="#" onmouseover="bigImg(this)" onmouseout="normalImg(this)">
                 <!-- <img src="../assets/s.jpg" style="border-radius: 25px;" alt="" width="50"
                     height="50" class="me-2 "> -->
                 <i><i class="fa fa-bolt text-warning"></i>Treet Store</i>
@@ -63,11 +86,10 @@ function myFunctionSearch() {
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <form class="d-flex ms-auto my-4 my-lg-0">                                               <!--dom2 onsearch-->
-                    <input class="form-control me-2" type="search" placeholder="Cari Barang"  id="myInput" onsearch="myFunctionSearch()" aria-label="Search">
+                <form class="d-flex ms-auto my-4 my-lg-0">
+                    <input class="form-control me-2" type="search" placeholder="Cari Barang" aria-label="Search">
                     <button class="btn btn-light" type="submit"><i class="fa fa-search"></i></button>
                 </form>
-             
 
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -96,15 +118,10 @@ function myFunctionSearch() {
         </div>
     </nav>
     <!-- NavBar -->
-<br><br> <br><br>
+<br><br><br><br>
 
-<!--Result Search-->
-<div class="container"><p id="input"></p></div>
-<!--Result Search-->
-
- <!--Alert-->                    <!--dom3 onclick -->  
- <marquee style="text-align: center;">
- <div class="container" id="alert" onclick="myFunctionColor()">
+ <!--Alert-->
+ <div class="container">
      <div class="alert alert-success">
          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg"
              viewBox="0 0 16 16">
@@ -113,11 +130,10 @@ function myFunctionSearch() {
          </svg>
          Discount all item in January! Check it out!
      </div>
-    </marquee>
      <!--ALert-->
 
 <!-- carousel-->
-<div class="container">
+<div class="container" onclick="Corners()">
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -133,7 +149,7 @@ function myFunctionSearch() {
                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
                            aria-label="Slide 6"></button>
     </div>
-    <div class="carousel-inner">
+    <div class="carousel-inner" id="corn">
         <div class="carousel-item active">
             <img src="../assets/img1.jpg" class="d-block img-fluid" alt="error">
         </div>
@@ -173,8 +189,9 @@ function myFunctionSearch() {
 
 
 <!-- Awal Kategori-->
-<div class="container mt-5">
-    <div class="judul-category" style="background-color: #fff; padding: 5px 10px;">
+<div class="container mt-5">                                                            <!-- Dom Kategori-->
+    <div class="judul-category" style="background-color: #fff; padding: 5px 10px;" onmouseover="bgBlack(this)"
+        onmouseout="normalBg(this)">
         <h5 class="text-center" style="margin-top: 5px;">KATEGORI</h5>
     </div>
     <div class="row text-center row-container mt-2">
@@ -556,7 +573,7 @@ function myFunctionSearch() {
                             <button class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="../assets/produk/produk2.jpg" class="rounded-3" style="width: 100%;" />
+                            <img src="../assets/produk/produk2.jpg" class="rounded-3" style="width: 450px;" />
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-success" data-bs-dismiss="modal">Ok</button>
@@ -574,7 +591,7 @@ function myFunctionSearch() {
                             <button class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="../assets/produk/produk3.jpg" class="rounded-3" style="width: 100%;" />
+                            <img src="../assets/produk/produk3.jpg" class="rounded-3" style="width: 450px;" />
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-success" data-bs-dismiss="modal">Ok</button>
@@ -592,7 +609,7 @@ function myFunctionSearch() {
                             <button class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="../assets/produk/produk4.jpg" class="rounded-3" style="width: 100%;" />
+                            <img src="../assets/produk/produk4.jpg" class="rounded-3" style="width: 450px;" />
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-success" data-bs-dismiss="modal">Ok</button>
@@ -610,7 +627,7 @@ function myFunctionSearch() {
                             <button class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="../assets/produk/produk5.jpg" class="rounded-3" style="width: 100%;" />
+                            <img src="../assets/produk/produk5.jpg" class="rounded-3" style="width: 450px;" />
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-success" data-bs-dismiss="modal">Ok</button>
@@ -628,7 +645,7 @@ function myFunctionSearch() {
                             <button class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="../assets/produk/produk61.jpg" class="rounded-3" style="width: 100%;" />
+                            <img src="../assets/produk/produk61.jpg" class="rounded-3" style="width: 450px;" />
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-success" data-bs-dismiss="modal">Ok</button>
@@ -646,7 +663,7 @@ function myFunctionSearch() {
                             <button class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="../assets/produk/produk7.jpg" class="rounded-3" style="width: 100%;" />
+                            <img src="../assets/produk/produk7.jpg" class="rounded-3" style="width: 450px;" />
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-success" data-bs-dismiss="modal">Ok</button>
@@ -664,7 +681,7 @@ function myFunctionSearch() {
                             <button class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="../assets/produk/produk8.jpg" class="rounded-3" style="width: 100%;" />
+                            <img src="../assets/produk/produk8.jpg" class="rounded-3" style="width: 450px;" />
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-success" data-bs-dismiss="modal">Ok</button>
@@ -682,7 +699,7 @@ function myFunctionSearch() {
                             <button class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="../assets/produk/produk9.jpg" class="rounded-3" style="width: 100%;" />
+                            <img src="../assets/produk/produk9.jpg" class="rounded-3" style="width: 450px;" />
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-success" data-bs-dismiss="modal">Ok</button>
@@ -700,7 +717,7 @@ function myFunctionSearch() {
                             <button class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="../assets/produk/produk10.jpg" class="rounded-3" style="width: 100%;" />
+                            <img src="../assets/produk/produk10.jpg" class="rounded-3" style="width: 450px;" />
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-success" data-bs-dismiss="modal">Ok</button>
@@ -718,7 +735,7 @@ function myFunctionSearch() {
                             <button class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="../assets/produk/produk11.jpg" class="rounded-3" style="width: 100%;" />
+                            <img src="../assets/produk/produk11.jpg" class="rounded-3" style="width: 450px;" />
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-success" data-bs-dismiss="modal">Ok</button>
@@ -736,7 +753,7 @@ function myFunctionSearch() {
                             <button class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="../assets/produk/produk12.jpg" class="rounded-3" style="width: 100%;" />
+                            <img src="../assets/produk/produk12.jpg" class="rounded-3" style="width: 450px;" />
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-success" data-bs-dismiss="modal">Ok</button>
@@ -784,7 +801,7 @@ function myFunctionSearch() {
                          </div>
                      </div>
 
-                     <button type="submit" class="btn btn-primary">Submit</button>
+                     <button type="submit" class="btn btn-dark">Submit</button>
                  </form>
             </div>
         </div>
@@ -794,7 +811,7 @@ function myFunctionSearch() {
         <div class="row mt-2">
             <div class="col-md-6 text-md-start text-center pt-2 pb-2">
                
-                <span class="ps-1">Copyright @2022 | Created with <i class="fa fa-bolt text-warning"></i> by <a
+                <span class="ps-1">Copyright @2022 | Created with <i class="fa fa-bolt text-warning"></i> soul by <a
                         href="https://yudi33.github.io" class="text-decoration-none text-dark fw-bold">yudi</a></span>
                 </div>
 
